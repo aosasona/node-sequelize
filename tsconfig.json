@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+      "experimentalDecorators": true,
     "target": "es2016",
     "module": "commonjs" ,
     "rootDir": "./src",
@@ -10,6 +11,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
      "skipDefaultLibCheck": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./src/types",
+      "node_modules/@types"
+    ],
   }
 }
