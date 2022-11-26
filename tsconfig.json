@@ -1,20 +1,24 @@
 {
   "compilerOptions": {
-      "experimentalDecorators": true,
+    "experimentalDecorators": true,
     "target": "es2016",
-    "module": "commonjs" ,
-    "rootDir": "./src",
-     "moduleResolution": "node",
-     "resolveJsonModule": true,
-    "outDir": "./dist",
+    "module": "commonjs",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "outDir": "dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-     "skipDefaultLibCheck": true,
+    "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "typeRoots": [
       "./src/types",
       "node_modules/@types"
-    ],
-  }
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

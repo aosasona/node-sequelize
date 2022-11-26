@@ -1,0 +1,35 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "database.sqlite",
+    "operatorsAliases": false,
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "underscoredAll": true
+    },
+    "logging": true
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "database.sqlite",
+    "operatorsAliases": false,
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "underscoredAll": true
+    },
+    "logging": true
+  },
+  "production": {
+    "dialect": "sqlite",
+    "storage": "database.sqlite",
+    "operatorsAliases": false,
+    "define": {
+      "timestamps": true,
+      "underscored": true,
+      "underscoredAll": true
+    },
+    "logging": false
+  }
+}
