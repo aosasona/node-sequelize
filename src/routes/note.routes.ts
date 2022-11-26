@@ -18,5 +18,7 @@ export default class NoteRoutes extends BaseRoute {
 		this.router.get("/", AuthMiddleware.verifyToken, this.controllers.getAllNotes);
 		this.router.get("/:id", AuthMiddleware.verifyToken, this.controllers.getNoteById);
 		this.router.post("/", AuthMiddleware.verifyToken, this.controllers.createNote);
+		this.router.put("/:id", AuthMiddleware.verifyToken, this.controllers.updateNoteById);
+		this.router.delete("/:id", AuthMiddleware.verifyToken, this.controllers.deleteNoteById);
 	}
 }

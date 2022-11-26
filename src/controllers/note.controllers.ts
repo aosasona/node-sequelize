@@ -56,4 +56,51 @@ export default class NoteControllers implements BaseController {
 			next(err);
 		}
 	}
+
+	public static async updateNoteById(req: Request, res: Response, next: NextFunction): Promise<void> {
+		try {
+			const {user} = req;
+			const {id} = req.params;
+			if (isNaN(Number(id))) throw new CustomException("Invalid ID!", 400);
+
+			const note = await Notes.findByPk(id) as any;
+			if (!note) throw new CustomException("Note not found!", 404);
+
+			if (note.userId !== user) throw new CustomException("You are not authorized to update this note!", 401);
+
+			let {title, content} = req.body;
+			if (!title && !content) throw new CustomException("Nothing to update!", 400);
+
+			title = title || note.title;
+			content = content || note.content;
+			const updatedNote = await Notes.update({title, content}, {where: {id}});
+			if (!updatedNote) throw new CustomException("Something went wrong!", 500);
+
+			return ResponseUtil.send(res, {status: 200, data: {id, title, content}});
+		}
+		catch (err: unknown) {
+			next(err);
+		}
+	}
+
+	public static async deleteNoteById(req: Request, res: Response, next: NextFunction): Promise<void> {
+		try {
+			const {user} = req;
+			const {id} = req.params;
+			if (isNaN(Number(id))) throw new CustomException("Invalid ID!", 400);
+
+			const note = await Notes.findByPk(id) as any;
+			if (!note) throw new CustomException("Note not found!", 404);
+
+			if (note.userId !== user) throw new CustomException("You are not authorized to delete this note!", 401);
+
+			const deletedNote = await Notes.destroy({where: {id}});
+			if (!deletedNote) throw new CustomException("Something went wrong!", 500);
+
+			return ResponseUtil.send(res, {status: 200, data: {id}});
+		}
+		catch (err: unknown) {
+			next(err);
+		}
+	}
 }
