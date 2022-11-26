@@ -2,33 +2,28 @@
   "development": {
     "dialect": "sqlite",
     "storage": "database.sqlite",
-    "operatorsAliases": false,
     "define": {
       "timestamps": true,
-      "underscored": true,
-      "underscoredAll": true
-    },
-    "logging": true
+      "underscored": false,
+      "underscoredAll": false
+    }
   },
   "test": {
     "dialect": "sqlite",
     "storage": "database.sqlite",
-    "operatorsAliases": false,
     "define": {
       "timestamps": true,
-      "underscored": true,
-      "underscoredAll": true
-    },
-    "logging": true
+      "underscored": false,
+      "underscoredAll": false
+    }
   },
   "production": {
     "dialect": "sqlite",
     "storage": "database.sqlite",
-    "operatorsAliases": false,
     "define": {
       "timestamps": true,
-      "underscored": true,
-      "underscoredAll": true
+      "underscored": false,
+      "underscoredAll": false
     },
     "logging": false
   }

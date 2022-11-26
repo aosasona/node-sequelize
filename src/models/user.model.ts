@@ -1,5 +1,5 @@
 import {DBModel} from "../types/database.types";
 
-const user = require("../models/user.model") as DBModel;
+const user = require("../../models").user as DBModel;
 
 export default user;

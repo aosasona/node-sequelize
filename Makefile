@@ -23,3 +23,7 @@ start-dev:
 clean-dist:
 	@echo "Removing old dist folder..."
 	@rm -rf dist
+
+build-image:
+	@echo "Building docker image..."
+	@docker build -t nsq .

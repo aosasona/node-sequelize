@@ -15,5 +15,6 @@ export default class UserRoutes extends BaseRoute {
 
 	private initRoutes(): void {
 		this.router.post("/", this.controllers.createUser);
+		this.router.post("/login", this.controllers.login);
 	}
 }
